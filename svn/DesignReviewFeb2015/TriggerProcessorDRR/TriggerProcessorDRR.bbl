@@ -1,0 +1,254 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{NSWTDR}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{ATLAS New Small Wheel collaboration}}{A.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{A1}
+  \strng{fullhash}{A1}
+  \field{number}{CERN-LHCC-2013-006; ATLAS-TDR-020}
+  \field{title}{{New Small Wheel Technical Design Report}}
+  \verb{url}
+  \verb https://cds.cern.ch/record/1552862
+  \endverb
+  \field{year}{2013}
+\endentry
+
+\entry{hardware-platform}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Stony Brook University, BNL, Arizona University, Bucharest
+  University}}{S.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{S4}
+  \strng{fullhash}{S4}
+  \field{title}{{Trigger Processor Hardware Platform Options}}
+  \verb{url}
+  \verb https://svnweb.cern.ch/cern/wsvn/NSWELX/TriggerProcessor/documentation/
+  \verb DesignReviewFeb2015/TPHardwarePlatform/
+  \endverb
+  \field{year}{2015}
+\endentry
+
+\entry{hardware-LAr-OTC}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Stony Brook University, BNL and Arizona University}}{S.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{S3}
+  \strng{fullhash}{S3}
+  \field{title}{{LAr Optical Test Card Description}}
+  \verb{url}
+  \verb https://svnweb.cern.ch/cern/wsvn/NSWELX/TriggerProcessor/documentation/
+  \verb DesignReviewFeb2015/TPHardwarePlatform/opticalTestCard.docx
+  \endverb
+  \field{year}{2015}
+\endentry
+
+\entry{hardware-LAr-Carrier}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Stony Brook University and Arizona University}}{S.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{S2}
+  \strng{fullhash}{S2}
+  \field{title}{{The ATLAS Phase-I Upgrade LAr System ATCA Carrier Board}}
+  \verb{url}
+  \verb https://svnweb.cern.ch/cern/wsvn/NSWELX/TriggerProcessor/documentation/
+  \verb DesignReviewFeb2015/TPHardwarePlatform/lar-atca-carrier.docx
+  \endverb
+  \field{year}{2015}
+\endentry
+
+\entry{hardware-SRS-Mezz}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{Sorin Martoiu}}{S.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{S1}
+  \strng{fullhash}{S1}
+  \field{title}{{High-Density Optical Receiver Mezzanine board for ATCA-SRS}}
+  \verb{url}
+  \verb https://svnweb.cern.ch/cern/wsvn/NSWELX/TriggerProcessor/documentation/
+  \verb DesignReviewFeb2015/TPHardwarePlatform/HORX\%20specs.docx
+  \endverb
+  \field{year}{2015}
+\endentry
+
+\entry{hardware-SRS-Carrier}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {{eicSys GmbH}}{e.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{e1}
+  \strng{fullhash}{e1}
+  \field{title}{{EATCA-100, FPGA based ATCA blade for RD51 SRS system, User
+  Manual}}
+  \verb{url}
+  \verb https://svnweb.cern.ch/cern/wsvn/NSWELX/TriggerProcessor/documentation/
+  \verb DesignReviewFeb2015/TPHardwarePlatform/EATCA-100_UM.V0.pdf
+  \endverb
+  \field{year}{2014}
+\endentry
+
+\entry{harvardAlg}{article}{}
+  \name{author}{5}{}{%
+    {{}%
+     {Clark}{C.}%
+     {B}{B}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Lopez~Mateos}{L.~M.}%
+     {D}{D}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Felt}{F.}%
+     {N}{N}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Huth}{H.}%
+     {J}{J}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Oliver}{O.}%
+     {J}{J}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{CB+1}
+  \strng{fullhash}{CBLMDFNHJOJ1}
+  \field{number}{ATL-UPGRADE-INT-2014-001}
+  \field{title}{{An Algorithm for Micromegas Segment Reconstruction in the
+  Level-1 Trigger of the New Small Wheel}}
+  \verb{url}
+  \verb https://cds.cern.ch/record/1753329
+  \endverb
+  \list{location}{1}{%
+    {Geneva}%
+  }
+  \list{institution}{1}{%
+    {CERN}%
+  }
+  \field{year}{2014}
+\endentry
+
+\entry{CERN-LHCC-2011-012}{article}{}
+  \field{number}{CERN-LHCC-2011-012. LHCC-I-020}
+  \field{title}{{Letter of Intent for the Phase-I Upgrade of the ATLAS
+  Experiment}}
+  \list{location}{1}{%
+    {Geneva}%
+  }
+  \list{institution}{1}{%
+    {CERN}%
+  }
+  \field{year}{2011}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{harvard-alg-misal}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {al.}{a.}%
+     {Stephen~Chan}{S.~C.}%
+     {et}{e.}%
+     {}{}}%
+  }
+  \strng{namehash}{aSCe1}
+  \strng{fullhash}{aSCe1}
+  \field{title}{{Micromegas Trigger Misalignment}}
+  \verb{url}
+  \verb https://indico.cern.ch/event/357663/contribution/3/material/slides/0.pd
+  \verb f
+  \endverb
+  \field{year}{2014}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{harvard-alg-xxuvuvxx}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {al.}{a.}%
+     {Brian~Clark}{B.~C.}%
+     {et}{e.}%
+     {}{}}%
+  }
+  \strng{namehash}{aBCe1}
+  \strng{fullhash}{aBCe1}
+  \field{title}{{NSW MicroMegas trigger simulations comparing stereo strip
+  configurations}}
+  \verb{url}
+  \verb https://indico.cern.ch/event/356850/contribution/2/material/slides/0.pd
+  \verb f
+  \endverb
+  \field{year}{2014}
+  \warn{\item Invalid format of field 'month'}
+\endentry
+
+\entry{LellouchRates}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Lellouch}{L.}%
+     {Daniel}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LD1}
+  \strng{fullhash}{LD1}
+  \field{number}{ATL-UPGRADE-INT-2015-???}
+  \field{title}{{NSW Estimates of Data Rates}}
+  \verb{url}
+  \verb https://cds.cern.ch/record/????
+  \endverb
+  \list{location}{1}{%
+    {Rehovot, ISrael}%
+  }
+  \list{institution}{1}{%
+    {Weizmann Institute}%
+  }
+  \field{year}{2015}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput

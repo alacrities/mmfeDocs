@@ -1,0 +1,33 @@
+\select@language {UKenglish}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {section}{\numberline {2}Title, author and document numbers}{4}{section.2}
+\contentsline {subsection}{\numberline {2.1}Authors and Contributors}{4}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Special author lists}{5}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Metadata commands}{5}{subsection.2.3}
+\contentsline {section}{\numberline {3}The \texttt {atlasdoc} class}{7}{section.3}
+\contentsline {subsection}{\numberline {3.1}Dependencies and \texttt {atlaspackage}\xspace }{8}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Cover pages}{10}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}ATLAS notes}{10}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Auxiliary material}{11}{subsection.3.4}
+\contentsline {section}{\numberline {4}The ATLAS preprint style}{11}{section.4}
+\contentsline {section}{\numberline {5}Symbols in \texttt {atlasphysics.sty}}{12}{section.5}
+\contentsline {section}{\numberline {6}Platforms and \LaTeX \ Versions}{12}{section.6}
+\contentsline {subsection}{\numberline {6.1}Ubuntu 14.04}{12}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Ubuntu 12.04}{12}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}lxplus}{13}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}Fedora 20}{13}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.5}CentOS 7}{14}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.6}Windows 7}{14}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.7}MacOSX 10.9}{15}{subsection.6.7}
+\contentsline {section}{\numberline {7}Installation of \texttt {atlaslatex}\xspace in \texttt {texmf}\xspace tree}{15}{section.7}
+\contentsline {section}{\numberline {8}Journal templates}{16}{section.8}
+\contentsline {section}{\numberline {9}Miscellaneous \LaTeX {} tips}{16}{section.9}
+\contentsline {subsection}{\numberline {9.1}Line numbers}{16}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}Definitions}{17}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.3}Figures}{17}{subsection.9.3}
+\contentsline {subsection}{\numberline {9.4}Subfigures}{18}{subsection.9.4}
+\contentsline {subsection}{\numberline {9.5}Positions of figures and tables}{19}{subsection.9.5}
+\contentsline {subsection}{\numberline {9.6}\ensuremath {p_{\text {T}}}\xspace or \ensuremath {E_{\text {T}}}\xspace \ -- that is the question}{19}{subsection.9.6}
+\contentsline {section}{\numberline {10}Remarks on units and symbols}{19}{section.10}
+\contentsline {section}{\numberline {11}From \texttt {atlasnote} to \texttt {atlasdoc}}{20}{section.11}
+\contentsline {section}{\numberline {12}Changes in \texttt {atlascover-01-00-00}}{21}{section.12}

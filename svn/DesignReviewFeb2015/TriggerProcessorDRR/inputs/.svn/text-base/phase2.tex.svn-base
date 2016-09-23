@@ -1,0 +1,33 @@
+The current latency budget for the Phase\,1 trigger processor for the
+New Small Wheel, and the forward muon system in general is extremely
+tight.
+While the NSW trigger as designed now for installation in Long Shutdown\,2 (LS2)
+already meets the Phase\,2 requirement of an angular resolution of 1\,mrad,
+it is quite possible that one may further lower the thresholds
+for muon momentum by taking advantage of the increased Level-1 latency time
+to do a more refined calculation of muon pointing and momentum, or to
+improve robustness and redundancy, e.g.\ in case of missing layers.
+
+Currently, prompt signals from the Micromegas detectors and sTGC are
+used to form track segments in the NSW. A cut is made on the pointing
+back to the interaction region in a set of trigger processors, and the
+resulting $\Delta\theta$, and RoI information is transmitted to the Sector Logic
+which looks for a coincidence with prompt signals from the Big Wheel.
+Currently, the latency budget for the NSW trigger processor algorithm
+is approximately 100\,nsec, when fiber optic delays, serialization,
+deserialization and other factors are taken into consideration, along
+with the processing and transmission time associated with the Sector
+Logic.
+
+With a much larger amount of latency available in Phase\,2, and
+anticipated advances in FPGAs, it makes sense to seriously consider a
+more powerful trigger processing scheme that can take advantage of
+additional processing time to make a much more refined trigger
+algorithm. In this case, the Phase\,1 trigger processor hardware (ATCA cards + mezzanines),
+excluding the ATCA crates and optical fibers, would be replaced.
+Since such proposal is for equipment in USA\,15, it has
+little to no impact on the current plans, but can provide for the
+possibility of a much more refined Level-1 trigger that should be capable
+of pushing down the momentum threshold for forward muons significantly
+by including more fine-grained information available, given the
+latency.

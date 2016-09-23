@@ -1,0 +1,46 @@
+System Overview
+  Show MM to Sector Logic full chain including FELIX <block diagram>
+
+ART Data Input
+  MMFE8 > ADDC > Trigger Processor <block Diagram of 1 ADDC ASIC>
+
+ADDC ART Data Format
+  sent as GBT packet 
+  hit-list format
+
+Block diagram of FPGA 
+  GBT-FPGA firmware
+  GBT Decoder
+  Algorithm 
+  Track Canidate to sTGC FPGA
+
+Block Diagram of Algorithm
+  Finder -track canidate
+
+Verticle slice implemented with no timing errors using -2 speedgrade
+  show 1/16th slice implementation results
+  extrapolated resource useage ~70% in "485" part
+  expected part and resource useage
+
+Development Board Testing
+  Xilinx VC707 (xc7 485 -2)
+  block diagram of ublaze
+
+Internal Loopback test mode
+  block diagram daq including matlab code
+
+GBT fiber loopback mode
+
+slice of Algorithim is fully functional 
+Implementation is scaliable with setable parameters
+
+
+Integration with ADDC
+
+Ancellary functions
+
+Currently working on optimizing signal bit precision 
+Do I say anything about the bit precision?
+ADDC algorithim format will require 8 optical links!
+
+

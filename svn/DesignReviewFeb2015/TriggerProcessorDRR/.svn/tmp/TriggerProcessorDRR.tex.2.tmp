@@ -1,0 +1,322 @@
+%-------------------------------------------------------------------------------
+% This file provides a skeleton ATLAS document
+%-------------------------------------------------------------------------------
+\documentclass[USenglish]{latex/atlasdoc}
+% The language of the document must be set: usually UKenglish or USenglish
+% british and american also work!
+% Selected options:
+%  atlasstyle=true|false Use ATLAS style for document (default)
+%  coverpage             Create ATLAS draft cover page for collaboration circulation
+%                        See atlas-draft-cover.tex for a list of variables that should be defined.
+%  cernpreprint          Create front page for a CERN preprint
+%                        See atlas-preprint-cover.tex for a list of variables that should be defined.
+%  CONF                  The document is a CONF note (only useful together with coverpage)
+%  PUB                   The document is a PUB note (only useful together with coverpage)
+%  txfonts=true|false    Use txfonts rather than the default newtx - needed for arXiv submission
+%  paper=a4|letter       Set paper size to A4 (default) or letter
+%  maketitle=true|false  Run or do not run \maketitle from the class
+
+%-------------------------------------------------------------------------------
+% Extra packages:
+\usepackage{latex/atlaspackage}
+% Selected options:
+%  biblatex=true|false   Use biblatex (default) or bibtex for the bibliography
+%  backend=biber         Use the biber backend rather than bibtex
+%  minimal               Minimal set of packages
+%  default               Standard set of packages
+%  full                  Full set of packages
+% Style file with biblatex options for ATLAS documents
+\usepackage{latex/atlasbiblatex}
+
+% Package for creating list of authors and contributors to the analysis
+\usepackage{latex/atlascontribute}
+
+% Useful macros
+\usepackage{latex/atlasphysics}
+% See doc/atlas-physics.pdf for a list of the defined symbols
+% Default options are
+%   true:  journal, misc, particle, unit, xref
+%   false: bsm, hion, math, process, other, texmf
+% See the package for details on the options
+
+% Files with references for use with biblatex
+% Note that biber gives an error if it finds empty bib files
+\addbibresource{TriggerProcessorDRR.bib}
+\addbibresource{bibtex/bib/atlas-paper.bib}
+
+% Paths for figures - do not forget the / at the end of the directory name
+\graphicspath{{logos/}{figures/}}
+
+% Add you own definitions here (file TriggerProcessorDRR-defs.sty)
+\usepackage{TriggerProcessorDRR-defs}
+\usepackage{maybemath}
+\usepackage{booktabs}
+\usepackage{comment}
+\usepackage{titlesec}  % To create a \subsubsubsection
+\usepackage{pdfpages}  % Adding PDF documents into the latex
+
+%\setcounter{secnumdepth}{5} % Section depth to be numbered
+%\setcounter{tocdepth}{5} % Table of contents depth
+
+% Creating a new command \subsubsubsection
+\titleclass{\subsubsubsection}{straight}[\subsection]
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection.\arabic{subsubsubsection}}
+%\renewcommand\theparagraph{\thesubsubsubsection.\arabic{paragraph}} % optional; useful if paragraphs are to be numbered
+
+\titleformat{\subsubsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsubsection}{1em}{}
+\titlespacing*{\subsubsubsection}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+\makeatletter
+\renewcommand\@dotsep{1000}
+\renewcommand\paragraph{\@startsection{paragraph}{5}{\z@}%
+  {3.25ex \@plus1ex \@minus.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\renewcommand\subparagraph{\@startsection{subparagraph}{6}{\parindent}%
+  {3.25ex \@plus1ex \@minus .2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries}}
+\def\toclevel@subsubsubsection{4}
+\def\toclevel@paragraph{5}
+\def\toclevel@paragraph{6}
+\def\l@subsubsubsection{\@dottedtocline{4}{7em}{4em}}
+\def\l@paragraph{\@dottedtocline{5}{10em}{5em}}
+\def\l@subparagraph{\@dottedtocline{6}{14em}{6em}}
+\makeatother
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
+
+%-------------------------------------------------------------------------------
+% Generic document information
+%-------------------------------------------------------------------------------
+
+% Author and title for the PDF file
+\hypersetup{pdftitle={ATLAS draft},pdfauthor={The NSW Trigger Processor Working Group}}
+% Title, abstract and document
+\input{TriggerProcessorDRR-metadata}
+
+%-------------------------------------------------------------------------------
+% Content
+%-------------------------------------------------------------------------------
+\begin{document}
+
+%\maketitle
+\tableofcontents
+\newpage
+
+% List of contributors - print here or after the Bibliography
+%\AtlasPrintContribute{0.3}
+
+
+%-------------------------------------------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+\input{inputs/introduction}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{Trigger Processor Specifications}
+\label{sec:specs}
+\input{inputs/specs}
+%-------------------------------------------------------------------------------
+\subsection{Interface to Micromegas}
+\label{sec:specs-mm}
+\input{inputs/specs-mm}
+%-------------------------------------------------------------------------------
+\subsection{Interface to sTGC}
+\label{sec:specs-stgc}
+\input{inputs/specs-stgc}
+
+%-------------------------------------------------------------------------------
+\subsection{Interface to Sector Logic}
+\label{sec:specs-sl}
+\input{inputs/specs-sl}
+\FloatBarrier
+
+%-------------------------------------------------------------------------------
+\subsection{Ancillary Functions}
+\label{sec:specs-ancillary}
+\input{inputs/specs-ancillary}
+
+%-------------------------------------------------------------------------------
+%\subsection{Fibers Layout}
+%\label{sec:specs-fibers}
+%\input{inputs/specs-fibers}
+%-------------------------------------------------------------------------------
+
+% Get all figures and tables to appear before moving into the algorithms
+% The package placeins provides the macro \FloatBarrier to achieve this
+\FloatBarrier
+
+%-------------------------------------------------------------------------------
+\section{Trigger Algorithms and Performance}
+\label{sec:algorithms}
+%-------------------------------------------------------------------------------
+\subsection{Micromegas Trigger Algorithm}
+
+Two \MM trigger algorithms are considered, the ``MM Fitter algorithm''
+and the ``MM Look-Up-Table algorithm''. 
+They are described in detail below in Section~\ref{sec:algorithms-harvard} and
+Section~\ref{sec:algorithms-saclay} respectively.
+Comparing and contrasting these algorithms will allow the development of an optimized final algorithm.
+
+The \MM Fitter Algorithm is consider the baseline algorithm for now.
+It is currently the one that has been studied more extensively, including
+studies on the impact of misalignments in its efficiency and resolution.
+The algorithm is mostly complete and it has been implemented on an FPGA evaluation board.
+It is also the algorithm currently implemented in the ATLAS Trigger Simulation software.
+
+The studies are however not complete since they don't include a proper background simulation, and
+in particular, effects from coherent background. A more realistic implementation of the trigger simulation is also required. 
+Work is on-going on the trigger and cavern background simulations. Once these are finalized, we plan to test both algorithms with the conditions expected at high luminosity.
+If the MM Look-Up-Table algorithm is shown to be more robust, changes to the final algorithm will be considered and implemented as necessary.
+
+
+%-------------------------------------------------------------------------------
+\subsubsection{MM Fitter Algorithm}
+\label{sec:algorithms-harvard}
+\input{inputs/algorithms-harvard}
+\FloatBarrier
+
+%-------------------------------------------------------------------------------
+\subsubsection{MM Look-Up-Table Algorithm}
+\label{sec:algorithms-saclay}
+\input{inputs/algorithms-saclay}
+\FloatBarrier
+
+%-------------------------------------------------------------------------------
+\subsection{sTGC Trigger Algorithm}
+\label{sec:algorithms-stgc}
+\input{inputs/algorithms-stgc}
+\FloatBarrier
+
+%-------------------------------------------------------------------------------
+%\subsection{Candidate Selection}
+%\label{sec:algorithms-selection}
+%\input{inputs/algorithms-selection}
+%\FloatBarrier
+
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{Trigger Processor Hardware Platforms}
+\label{sec:hardware-platforms}
+\input{inputs/hardware-platforms}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{Testing}
+\label{sec:testing}
+\input{inputs/testing}
+%-------------------------------------------------------------------------------
+\subsection{MM Implementation Initial Testing}
+\label{sec:testing-mmTrigProcImp}
+\input{inputs/testing-mmTrigProcImp}
+%-------------------------------------------------------------------------------
+\subsection{Pattern Generators}
+\label{sec:testing-pg}
+\input{inputs/testing-pg}
+%-------------------------------------------------------------------------------
+\subsection{Cosmic Ray Testing}
+\label{sec:testing-cosmics}
+\input{inputs/testing-cosmics}
+%-------------------------------------------------------------------------------
+\subsection{Vertical Slice and Test Beam}
+\label{sec:testing-vertical-slice}
+\input{inputs/testing-vertical-slice}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{Phase-2 Compatibility}
+\label{sec:phase2}
+\input{inputs/phase2}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+\section{Project rganization}
+\label{sec:organization}
+\input{inputs/organization}
+%-------------------------------------------------------------------------------
+\subsection{Responsibilities}
+\label{sec:responsibilities}
+\input{inputs/responsibilities}
+%-------------------------------------------------------------------------------
+\subsection{Schedule}
+\label{sec:schedule}
+\input{inputs/schedule}
+%-------------------------------------------------------------------------------
+
+%Place your results here.
+
+% All figures and tables should appear before the summary and conclusion
+% The package placeins provides the macro \FloatBarrier to achieve this
+\FloatBarrier
+
+
+%-------------------------------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+\input{inputs/conclusions}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+%\section*{Acknowledgements}
+%-------------------------------------------------------------------------------
+
+%\input{acknowledgements/Acknowledgements}
+
+%-------------------------------------------------------------------------------
+\clearpage
+\appendix
+\part*{Appendix}
+\addcontentsline{toc}{part}{Appendix}
+
+\section{Fibers Layout}
+\label{app:specs-fibers}
+\input{inputs/specs-fibers}
+\FloatBarrier
+
+%-------------------------------------------------------------------------------
+%\section{SRS ATCA board}
+%\includepdf[pages={-}]{inputs/docs/EATCA-100_UM-V0.pdf}
+
+% \section{SRS Mezzanine card}
+% \includepdf[pages={-}]{inputs/docs/HORX-specs.pdf}
+
+% \section{LAr ATCA board}
+% \includepdf[pages={-}]{inputs/docs/lar-atca-carrier}
+
+
+% \section{LAr Mezzanine card}
+% \includepdf[pages={-}]{inputs/docs/opticalTestCard}
+
+
+
+%-------------------------------------------------------------------------------
+% If you use biblatex and biber to process the bibliography just say \printbibliogrpahy here
+\printbibliography
+% If you want to use BibTeX you need to use the syntax below.
+%\bibliographystyle{bibtex/bst/atlasBibStyleWoTitle}
+%\bibliography{TriggerProcessorDRR,bibtex/bib/atlas-paper}
+%-------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
+% Print the list of contributors to the analysis
+% The argument gives the fraction of the text width used for the names
+%-------------------------------------------------------------------------------
+%\clearpage
+%\PrintAtlasContribute{0.30}
+
+%-------------------------------------------------------------------------------
+%\clearpage
+%\appendix
+%\part*{Auxiliary material}
+%\addcontentsline{toc}{part}{Auxiliary material}
+%-------------------------------------------------------------------------------
+
+\end{document}

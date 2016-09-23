@@ -1,0 +1,155 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/reps/NSWELX/!svn/ver/240/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs
+END
+introduction.tex
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/reps/NSWELX/!svn/ver/234/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/introduction.tex
+END
+testing-vertical-slice.tex
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/reps/NSWELX/!svn/ver/224/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/testing-vertical-slice.tex
+END
+testing-pg.tex
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/reps/NSWELX/!svn/ver/229/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/testing-pg.tex
+END
+phase2.tex
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/reps/NSWELX/!svn/ver/229/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/phase2.tex
+END
+algorithms-saclay.tex
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/reps/NSWELX/!svn/ver/205/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/algorithms-saclay.tex
+END
+testing-mm.tex
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/reps/NSWELX/!svn/ver/229/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/testing-mm.tex
+END
+specs-mm.tex
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/reps/NSWELX/!svn/ver/229/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/specs-mm.tex
+END
+specs-fibers.tex
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/reps/NSWELX/!svn/ver/112/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/specs-fibers.tex
+END
+responsibilities.tex
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/reps/NSWELX/!svn/ver/237/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/responsibilities.tex
+END
+specs-sl.tex
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/reps/NSWELX/!svn/ver/229/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/specs-sl.tex
+END
+specs-ancillary.tex
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/reps/NSWELX/!svn/ver/229/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/specs-ancillary.tex
+END
+schedule.tex
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/schedule.tex
+END
+algorithms-selection.tex
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/algorithms-selection.tex
+END
+algorithms-harvard.tex
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/reps/NSWELX/!svn/ver/239/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/algorithms-harvard.tex
+END
+conclusions.tex
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/reps/NSWELX/!svn/ver/235/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/conclusions.tex
+END
+hardware-platforms.tex
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/reps/NSWELX/!svn/ver/240/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/hardware-platforms.tex
+END
+organization.tex
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/reps/NSWELX/!svn/ver/234/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/organization.tex
+END
+testing-mmTrigProcImp.tex
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/reps/NSWELX/!svn/ver/210/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/testing-mmTrigProcImp.tex
+END
+algorithms-stgc.tex
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/reps/NSWELX/!svn/ver/224/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/algorithms-stgc.tex
+END
+specs-sTGC.tex
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/reps/NSWELX/!svn/ver/229/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/specs-sTGC.tex
+END
+testing-stgc.tex
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/testing-stgc.tex
+END
+testing-cosmics.tex
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/reps/NSWELX/!svn/ver/229/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/testing-cosmics.tex
+END
+specs.tex
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/reps/NSWELX/!svn/ver/229/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/specs.tex
+END
+testing.tex
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/reps/NSWELX/!svn/ver/229/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/testing.tex
+END
+specs-combination.tex
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/reps/NSWELX/!svn/ver/229/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/inputs/specs-combination.tex
+END

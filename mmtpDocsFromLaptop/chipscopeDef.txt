@@ -1,0 +1,12 @@
+=
+   generalReset_from_user                            <= sync_from_vio( 0);          
+   clkMuxSel_from_user                               <= sync_from_vio( 1); ('0' -> TX_FRAMECLK | '1' -> TX_WORDCLK)
+   testPatterSel_from_user                           <= sync_from_vio( 3 downto  2);  ('1' -> COUNTER |  '2' -> STATIC | others -> NO DATA ERROR DETECTION)
+   loopBack_from_user                                <= sync_from_vio( 6 downto  4); ('0' -> NORMAL | '2' -> PMA LOOPBACK) (XILINX UG366 PAGE 124)
+   resetDataErrorSeenFlag_from_user                  <= sync_from_vio( 7);
+   resetGbtRxReadyLostFlag_from_user                 <= sync_from_vio( 8);
+   txIsDataSel_from_user                             <= sync_from_vio( 9);   ('0' -> IDLE | '1' -> DATA)
+   manualResetTx_from_user                           <= sync_from_vio(10);
+   manualResetRx_from_user                           <= sync_from_vio(11);
+
+00100000tp00

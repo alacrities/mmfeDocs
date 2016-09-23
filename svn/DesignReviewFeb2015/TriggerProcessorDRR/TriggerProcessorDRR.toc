@@ -1,0 +1,68 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {USenglish}
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}
+\contentsline {subsection}{\numberline {1.1}Overview of the NSW trigger}{4}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}System granularity and terminology}{4}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Requirements and Limitations}{5}{subsection.1.3}
+\contentsline {paragraph}{\nonumberline Matching resolution requirements}{5}{section*.2}
+\contentsline {paragraph}{\nonumberline Simulation limitations}{6}{section*.3}
+\contentsline {section}{\numberline {2}Trigger Processor Specifications}{6}{section.2}
+\contentsline {paragraph}{\nonumberline Mezzanine card connections}{6}{section*.5}
+\contentsline {paragraph}{\nonumberline Services via the ATCA carrier}{7}{section*.6}
+\contentsline {subsection}{\numberline {2.1}Trigger Processor Latency}{7}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Interface to Micromegas}{8}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}ART Data Protocol}{8}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Decoding ART Data}{9}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}Interface to sTGC}{9}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Interface to Sector Logic}{9}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}NSW Trigger Data Format}{10}{subsubsection.2.4.1}
+\contentsline {paragraph}{\nonumberline Data overflow}{11}{section*.13}
+\contentsline {subsubsection}{\numberline {2.4.2}Combination of sTGC and MM trigger data}{12}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}Matching to Sector Logic Boards}{12}{subsubsection.2.4.3}
+\contentsline {subsection}{\numberline {2.5}Ancillary Functions}{15}{subsection.2.5}
+\contentsline {section}{\numberline {3}Trigger Algorithms and Performance}{16}{section.3}
+\contentsline {subsection}{\numberline {3.1}Micromegas Trigger Algorithm}{16}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}MM Fitter Algorithm}{17}{subsubsection.3.1.1}
+\contentsline {subsubsubsection}{\numberline {3.1.1.1}Description}{17}{subsubsubsection.3.1.1.1}
+\contentsline {subsubsubsection}{\numberline {3.1.1.2}Implementation}{17}{subsubsubsection.3.1.1.2}
+\contentsline {subsubsubsection}{\numberline {3.1.1.3}Misalignment Configurations and Corrections}{21}{subsubsubsection.3.1.1.3}
+\contentsline {subsubsubsection}{\numberline {3.1.1.4}Performance}{22}{subsubsubsection.3.1.1.4}
+\contentsline {paragraph}{\nonumberline Effects from incoherent background}{24}{section*.24}
+\contentsline {paragraph}{\nonumberline Effects from misalignments within the NSW}{26}{section*.26}
+\contentsline {paragraph}{\nonumberline Performance with the xxuv uvxx configuration}{26}{section*.28}
+\contentsline {subsubsection}{\numberline {3.1.2}MM Look-Up-Table Algorithm}{28}{subsubsection.3.1.2}
+\contentsline {subsubsubsection}{\numberline {3.1.2.1}Principle of the algorithm}{28}{subsubsubsection.3.1.2.1}
+\contentsline {subsubsubsection}{\numberline {3.1.2.2}Algorithm Implementation}{29}{subsubsubsection.3.1.2.2}
+\contentsline {subsubsubsection}{\numberline {3.1.2.3}Algorithm Performance}{32}{subsubsubsection.3.1.2.3}
+\contentsline {subsubsubsection}{\numberline {3.1.2.4}Summary}{34}{subsubsubsection.3.1.2.4}
+\contentsline {subsection}{\numberline {3.2}sTGC Trigger Algorithm}{35}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}The pre-trigger from the pad towers}{35}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Finding track segments and calculating their parameters}{36}{subsubsection.3.2.2}
+\contentsline {paragraph}{\nonumberline FPGA resources needed}{38}{section*.47}
+\contentsline {subsubsection}{\numberline {3.2.3}Compensating for misalignments}{39}{subsubsection.3.2.3}
+\contentsline {section}{\numberline {4}Trigger Processor Hardware Platforms}{40}{section.4}
+\contentsline {subsection}{\numberline {4.1}Specification comparison}{40}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}ATCA Standard Interfaces}{40}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Optical i/o for detector data and Sector Logic}{40}{subsubsection.4.1.2}
+\contentsline {paragraph}{\nonumberline SRS AMC cards.}{40}{section*.50}
+\contentsline {paragraph}{\nonumberline LAr AMC cards}{41}{section*.51}
+\contentsline {subsubsection}{\numberline {4.1.3}AMC to AMC lateral communication}{41}{subsubsection.4.1.3}
+\contentsline {paragraph}{\nonumberline SRS AMC cards}{41}{section*.52}
+\contentsline {paragraph}{\nonumberline LAr AMC cards}{41}{section*.53}
+\contentsline {subsection}{\numberline {4.2}Selection Criteria}{42}{subsection.4.2}
+\contentsline {section}{\numberline {5}Testing}{42}{section.5}
+\contentsline {subsection}{\numberline {5.1}MM Implementation Initial Testing}{42}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Pattern Generators}{43}{subsection.5.2}
+\contentsline {subsubsection}{\numberline {5.2.1}The Micromegas ART Pattern Generator}{43}{subsubsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2}The sTGC Pattern Generator}{44}{subsubsection.5.2.2}
+\contentsline {subsection}{\numberline {5.3}Cosmic Ray Testing}{44}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Vertical Slice and Test Beam}{45}{subsection.5.4}
+\contentsline {section}{\numberline {6}Phase-2 Compatibility}{46}{section.6}
+\contentsline {section}{\numberline {7}Project rganization}{47}{section.7}
+\contentsline {subsection}{\numberline {7.1}Responsibilities}{47}{subsection.7.1}
+\contentsline {paragraph}{\nonumberline Software}{48}{section*.60}
+\contentsline {subsection}{\numberline {7.2}Schedule}{48}{subsection.7.2}
+\contentsline {section}{\numberline {8}Conclusion}{48}{section.8}
+\contentsline {part}{Appendix}{50}{part*.61}
+\contentsline {section}{\numberline {A}Fibers Layout}{50}{appendix.A}

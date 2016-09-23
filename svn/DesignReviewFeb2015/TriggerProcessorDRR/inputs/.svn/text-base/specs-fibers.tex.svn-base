@@ -1,0 +1,19 @@
+% Optical Fiber plant
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.99\textheight, angle=90]{figures/LL_sTGC_opticalPath_V03.pdf}
+   \caption{Optical fiber plant for the sTGC, including both trigger and readout fibers.
+   The current plan is for four fibers per layer (i.e.\ from each Router), instead of three.}
+   \label{fig:LL_sTGC_opticalPath}
+\end{figure}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.99\textheight, angle=90]{figures/LL_MM_opticalPath_V03.pdf}
+   \caption{Optical fiber plant for the Micromegas, including both trigger and readout fibers}
+   \label{fig:LL_MM_opticalPath}
+\end{figure}
+
+
+\FloatBarrier

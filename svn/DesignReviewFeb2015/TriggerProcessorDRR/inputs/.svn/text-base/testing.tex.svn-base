@@ -1,0 +1,12 @@
+The testing of the trigger processor and algorithm
+implementation in hardware, for both \MM and sTGC, will be
+performed in four ways. Initially, signals from upstream electronics
+are generated in the trigger processor FPGA and looped back in
+order to test the implementation of the algorithm in hardware. Testing of the full
+electronics chain requires further work. In
+the absence of realistic chambers, the
+detector and front-end output will be emulated by pattern generators
+in order to characterize the full trigger chain, including
+the ADDC. Additionally, the trigger
+system will be tested on real detectors with cosmic rays and in a
+test beam.

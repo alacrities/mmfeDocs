@@ -1,0 +1,24 @@
+
+
+ADDC ART Data Format
+  sent as GBT packet 
+  hit-list format
+
+Verticle slice implemented with no timing errors using -2 speedgrade
+  show 1/16th slice implementation results
+  extrapolated resource useage ~70% in "485" part
+  expected part and resource useage
+
+slice of Algorithim is fully functional 
+Implementation is scaliable with setable parameters
+
+
+Integration with ADDC
+
+Ancellary functions
+
+Currently working on optimizing signal bit precision 
+Do I say anything about the bit precision?
+ADDC algorithim format will require 8 optical links!
+
+

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/doc/atlas_tables
+END
+cross_sections_charm-x1.tex
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/doc/atlas_tables/cross_sections_charm-x1.tex
+END
+cross_sections_charm-ET1.tex
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/doc/atlas_tables/cross_sections_charm-ET1.tex
+END
+cross_sections_charm-x2.tex
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/doc/atlas_tables/cross_sections_charm-x2.tex
+END
+cross_sections_charm-ET2.tex
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/doc/atlas_tables/cross_sections_charm-ET2.tex
+END
+atlas_tables.bib
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/doc/atlas_tables/atlas_tables.bib
+END
+atlas_tables-defs.sty
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/doc/atlas_tables/atlas_tables-defs.sty
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/doc/atlas_tables/Makefile
+END
+atlas_tables.tex
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/doc/atlas_tables/atlas_tables.tex
+END
+latex
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/reps/NSWELX/!svn/ver/40/TriggerProcessor/documentation/DesignReviewFeb2015/TriggerProcessorDRR/doc/atlas_tables/latex
+END

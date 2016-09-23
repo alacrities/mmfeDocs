@@ -1,0 +1,510 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+\usepackage{babel}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding latin9
+\fontencoding T1
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 0
+\use_mathdots 0
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Section
+Trigger processor ADDC Interface
+\end_layout
+
+\begin_layout Standard
+The ART data from an entire wedge will be transmitted to a single trigger
+ processor.
+ 32 ADDCs are required to cover one wedge resulting in 32 total fibers per
+ Trigger Processor.
+ Since the MM and sTGC trigger processors will share the same ATCA carrier
+ card, each carrier will support 2 wedges.
+ 
+\end_layout
+
+\begin_layout Standard
+The ART Data from the ADDC will be transmitted using the GigaBit Transceiver
+ (GBT) architecture and transmission protocol in a low-latency widebus mode.
+ The Trigger Processor will take advantage of the GBT firmware developed
+ by GBT Project to implement the receivers.
+\end_layout
+
+\begin_layout Subsection
+ART Data Protocol
+\end_layout
+
+\begin_layout Standard
+The GBT packet in widebus mode will provide 112 data bits and arrives once
+ every bunch crossing.
+ One ADDC will service 32 VMMs and each packet can contain ART data from
+ a maximum of 8 triggered VMMs.
+ Each VMM will be uniquely identifed to determine which micromegas strip
+ on the wedge was hit.
+\end_layout
+
+\begin_layout Standard
+There are two options for how data packet bits will be defined.
+ The difference between the two is how the VMM ID information is encoded.
+ The first data protocol option will provide the VMM IDs of every VMM that
+ was triggered by asserting a bit in a 32-bit hit list.
+ The second option will encode each VMM ID in a list.
+ For both options the triggered strip number within each VMM will be provided
+ in a list.
+ The first option would move the VMM ID encoding task from the ADDC ASIC
+ to the Trigger Processor FPGA.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option 1 GBT DATA[111:56]
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes eld
+\end_inset
+
+1010
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BCID[11:0] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ERR_FLAGS[7:0] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HIT_LIST[31:0] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ARTDATA_PARITY[7:0] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 x ARTDATAx[5:0]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Option 2 GBT DATA[111:56]
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HIT_CNT[3:0] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BCID[11:0] 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="none" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 x VMMIDx[4:0]
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ARTDATA_PARITY[7:0] 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 x ARTDATAx[5:0]
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+HIT_LIST[31:0] = 32-bit list of flags corresponding to each of the 32 VMMs.
+ 0 - no hit, 1 - hit.
+ A register controls if this is a filtered (i.e.
+ 8 hits max) or an un- filtered copy of the VMM flags registered in a particular
+ BC.
+ 
+\end_layout
+
+\begin_layout Itemize
+HIT_CNT[3:0] = number of hits (range 0 - 8; 9 - 15 invalid) 
+\end_layout
+
+\begin_layout Itemize
+ARTDATA_PARITY[7:0] = parity bit of the ART data computed by each of the
+ 32 ART de-serializer units.
+ Each bit corresponds to one of the ART data field selected by the priority
+ unit.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/nate/Desktop/Screenshot-Format of ADDC output - caproniarts@gmail.com - Gmail - Google Chrome.png
+	draft
+	BoundingBox 0 0 200 100
+	special type=eps
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Trigger Processor Implementation and testing
+\end_layout
+
+\begin_layout Standard
+A 1/16
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+th
+\end_layout
+
+\end_inset
+
+ slice of the complete Trigger Processor design has been implemented and
+ is being tested using a Xilinx VC707 Development board.
+ This board includes a Virtex XC7VX485T-2FFG1761C FPGA.
+ The implementation includes 2 ADDC GBT interfaces and assoiated trigger
+ processor algorithim.
+ Extrapolating from this implementation, the resources are estimated to
+ be ~70% of the Xilinx 485 chip.
+ There are pin compatible upgrades to the target chip if more resources
+ are needed.
+\end_layout
+
+\begin_layout Subsection
+ADDC Interface
+\end_layout
+
+\begin_layout Standard
+The GBT interface has been implemented using the code from the GBT FPGA
+ group.
+ Currently, there are 2 GBT interfaces implemented in the design.
+ This represents ART data from two ADDC baords.
+ To excercise the trigger procesor design, we have developed an ADDC emulator.
+ This design can be used to supply properly formatted ADDC GBT packets through
+ an optical transmitter.
+ The same ART data used for simulations is being used for hardware testing.
+\end_layout
+
+\begin_layout Subsection
+algorithm 
+\end_layout
+
+\begin_layout Standard
+When I compare hardware results with Brian's results, there is more information
+ in the Cartesian coordinates making it a better comparison.
+\end_layout
+
+\begin_layout Standard
+All of my hardware testing has been done with Brian's data which I believe
+ are Athena events and compared to Brian's results.
+ When doing comparisons the residues are determined on how many significant
+ bits I use.
+ Brian's original testing used double precision where I usually carry 16
+ bits.
+ There are some places 16 bits are not enough.
+ In the case of calculating Delta Theta, I need to increase the number of
+ significant bits in the Mx local calculation to get a reasonable Delta
+ Theta.
+ This still needs to be done.
+ I may write a new Matlab simulation using Matlab's fixed point variables.
+\end_layout
+
+\begin_layout Standard
+I would like to stress the concept of many "finders" and few "fitters".
+ Since the majority of resources go into the fitter, this is a real benefit.
+ Any changes in the algorithm won't have a significant resource multiplication
+ factor.
+\end_layout
+
+\begin_layout Standard
+Early on I tested a single Finder and single Fitter to run at the required
+ clock rate but need to do more work on some high fan-out signals to run
+ the multiple finder version at the required clock rate.
+\end_layout
+
+\begin_layout Standard
+The division in the delta theta calculation uses a reciprocal look-up table.
+ Not sure if this was in Brian's note.
+\end_layout
+
+\begin_layout Standard
+.
+\end_layout
+
+\begin_layout Standard
+I haven't found any odd events that misbehave in the hardware implementation.
+ Due to the implementation's pipeline nature with deterministic timing and
+ no IIR type feedback paths, any single event can't have a lasting impact
+ on subsequent events.
+ The algorithm implementation itself will never get stuck requiring a reset.
+ The GBT communication does include a reset.
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

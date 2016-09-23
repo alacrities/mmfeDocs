@@ -1,0 +1,32 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}
+\BOOKMARK [1][-]{section.2}{Title, author and document numbers}{}
+\BOOKMARK [2][-]{subsection.2.1}{Authors and Contributors}{section.2}
+\BOOKMARK [2][-]{subsection.2.2}{Special author lists}{section.2}
+\BOOKMARK [2][-]{subsection.2.3}{Metadata commands}{section.2}
+\BOOKMARK [1][-]{section.3}{The atlasdoc class}{}
+\BOOKMARK [2][-]{subsection.3.1}{Dependencies and atlaspackage}{section.3}
+\BOOKMARK [2][-]{subsection.3.2}{Cover pages}{section.3}
+\BOOKMARK [2][-]{subsection.3.3}{ATLAS notes}{section.3}
+\BOOKMARK [2][-]{subsection.3.4}{Auxiliary material}{section.3}
+\BOOKMARK [1][-]{section.4}{The ATLAS preprint style}{}
+\BOOKMARK [1][-]{section.5}{Symbols in atlasphysics.sty}{}
+\BOOKMARK [1][-]{section.6}{Platforms and LaTeX Versions}{}
+\BOOKMARK [2][-]{subsection.6.1}{Ubuntu 14.04}{section.6}
+\BOOKMARK [2][-]{subsection.6.2}{Ubuntu 12.04}{section.6}
+\BOOKMARK [2][-]{subsection.6.3}{lxplus}{section.6}
+\BOOKMARK [2][-]{subsection.6.4}{Fedora 20}{section.6}
+\BOOKMARK [2][-]{subsection.6.5}{CentOS 7}{section.6}
+\BOOKMARK [2][-]{subsection.6.6}{Windows 7}{section.6}
+\BOOKMARK [2][-]{subsection.6.7}{MacOSX 10.9}{section.6}
+\BOOKMARK [1][-]{section.7}{Installation of atlaslatex in texmf tree}{}
+\BOOKMARK [1][-]{section.8}{Journal templates}{}
+\BOOKMARK [1][-]{section.9}{Miscellaneous LaTeX tips}{}
+\BOOKMARK [2][-]{subsection.9.1}{Line numbers}{section.9}
+\BOOKMARK [2][-]{subsection.9.2}{Definitions}{section.9}
+\BOOKMARK [2][-]{subsection.9.3}{Figures}{section.9}
+\BOOKMARK [2][-]{subsection.9.4}{Subfigures}{section.9}
+\BOOKMARK [2][-]{subsection.9.5}{Positions of figures and tables}{section.9}
+\BOOKMARK [2][-]{subsection.9.6}{pT or ET -- that is the question}{section.9}
+\BOOKMARK [1][-]{section.10}{Remarks on units and symbols}{}
+\BOOKMARK [1][-]{section.11}{From atlasnote to atlasdoc}{}
+\BOOKMARK [1][-]{section.12}{Changes in atlascover-01-00-00}{}

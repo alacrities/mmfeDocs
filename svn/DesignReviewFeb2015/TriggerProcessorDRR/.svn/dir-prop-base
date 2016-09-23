@@ -1,0 +1,18 @@
+K 10
+svn:ignore
+V 339
+TriggerProcessorDRR.fls
+TriggerProcessorDRR.synctex.gz
+TriggerProcessorDRR.blg
+TriggerProcessorDRR.sublime-workspace
+TriggerProcessorDRR.fdb_latexmk
+TriggerProcessorDRR.run.xml
+TriggerProcessorDRR.aux
+TriggerProcessorDRR.sublime-project
+TriggerProcessorDRR.log
+TriggerProcessorDRR.out
+TriggerProcessorDRR.toc
+TriggerProcessorDRR.bbl
+*.tws
+
+END

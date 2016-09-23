@@ -1,0 +1,100 @@
+Z 0
+Z_RECIP -30
+CSC_SA -10
+COT_SA -10
+MX_LOCAL_A -39
+MX_LOCAL_B -26
+M_SA_shift 6
+zy_shift 5
+aszy_shift 20
+bsy_shift 12
+MX_PROD_SHIFT 16
+
+--ZY SHIFT + MX_LOCAL_A + ASZY_SHIFT
+ASZY -14
+--MX_LOCAL_B + BSY_SHIFT
+BSY -14
+MX_LOCAL -14
+
+--Z_RECIP + 16
+MX_Global -14
+MU_Global -14
+MV_Global -14
+
+--M_SA_SHIFT + CXX_SA
+mx_roi -18  
+
+MX_PROD_dbg -28
+MX_DIFF -13
+-- MX_GLOBAL + MX_LOCAL + MX_PROD_SHIFT 
+MX_PROD (DIVISOR) -12 
+DTHETA -1
+
+
+ when x"01" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(TRACK_DATA.Y(0));
+          DEBUG0(31 downto 16) <= std_logic_vector(TRACK_DATA.Y(1));
+          DEBUG0_WSTRB         <= '1';
+        when x"02" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(TRACK_DATA.Y(2));
+          DEBUG0(31 downto 16) <= std_logic_vector(TRACK_DATA.Y(3));
+          DEBUG0_WSTRB         <= '1';
+        when x"03" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(TRACK_DATA.Y(4));
+          DEBUG0(31 downto 16) <= std_logic_vector(TRACK_DATA.Y(5));
+          DEBUG0_WSTRB         <= '1';
+        when x"04" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(TRACK_DATA.Y(6));
+          DEBUG0(31 downto 16) <= std_logic_vector(TRACK_DATA.Y(7));
+          DEBUG0_WSTRB         <= '1';
+        when x"05" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(TRACK_DATA.M(0));
+          DEBUG0(31 downto 16) <= std_logic_vector(TRACK_DATA.M(1));
+          DEBUG0_WSTRB         <= '1';
+        when x"06" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(TRACK_DATA.M(2));
+          DEBUG0(31 downto 16) <= std_logic_vector(TRACK_DATA.M(3));
+          DEBUG0_WSTRB         <= '1';
+        when x"07" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(TRACK_DATA.M(4));
+          DEBUG0(31 downto 16) <= std_logic_vector(TRACK_DATA.M(5));
+          DEBUG0_WSTRB         <= '1';
+        when x"08" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(TRACK_DATA.M(6));
+          DEBUG0(31 downto 16) <= std_logic_vector(TRACK_DATA.M(7));
+          DEBUG0_WSTRB         <= '1';
+        when x"09" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(MU_GLOBAL);
+          DEBUG0(31 downto 16) <= std_logic_vector(MV_GLOBAL);
+          DEBUG0_WSTRB         <= '1';
+        when x"0A" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(MX_LOCAL);
+          DEBUG0(31 downto 16) <= std_logic_vector(MX_GLOBAL);
+          DEBUG0_WSTRB         <= '1';
+        when x"0B" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(szy_dbg);
+          DEBUG0(31 downto 16) <= std_logic_vector(sy_dbg);
+          DEBUG0_WSTRB         <= '1';
+        when x"0C" =>
+          DEBUG0(31 downto 0) <= std_logic_vector(ASZY_INT_dbg);
+          DEBUG0_WSTRB        <= '1';
+        when x"0D" =>
+          DEBUG0(31 downto 0) <= std_logic_vector(BSY_INT_dbg);
+          DEBUG0_WSTRB        <= '1';
+        when x"0E" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(MX_ROI_dbg);
+          DEBUG0(31 downto 16) <= "0000000" & std_logic_vector(ROI);
+          DEBUG0_WSTRB         <= '1';
+        when x"0F" =>
+          DEBUG0(15 downto 0)  <= std_logic_vector(DTHETA);
+          DEBUG0(31 downto 16) <= std_logic_vector(MX_DIFF_dbg);
+          DEBUG0_WSTRB         <= '1';
+        when x"10" =>
+          DEBUG0(15 downto 0) <= std_logic_vector(MX_ROI_dbg);
+          DEBUG0(31 downto 0) <= std_logic_vector(MX_PROD_dbg);
+          DEBUG0_WSTRB        <= '1';
+        when x"11" =>
+          DEBUG0(15 downto 0)  <= "00000" & std_logic_vector(BXID_COUNT);
+          DEBUG0(31 downto 16) <= x"CAFE";
+          DEBUG0_WSTRB         <= '1';
+        when others =>

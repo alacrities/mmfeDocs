@@ -1,0 +1,73 @@
+In addition to implementing the trigger algorithms for the \MM and
+\stgc systems, the NSW Trigger Processor has to perform several
+ancillary functions. These include time synchronization,
+configuration, monitoring and debugging mode, among others. Several functions are common to both \MM and \stgc and their firmware can be shared as well-defined packages. These functions are:
+
+\begin{description}
+
+  \item[Interface for algorithm configuration parameters] \hfill \\
+  Parameters for the algorithms must be stored at runtime. Examples
+  are the $\Delta\theta$ and other cuts, the BCID offset, alignment
+  parameters, the parts of the detector to be considered as disabled,
+  road size, etc. Configuration can be done via Ethernet and the
+  carrier board or via an E-link from FELIX that is available on the link that brings the TTC information.
+  Readback of the parameters must also be provided.
+
+  \item[TTC interface] \hfill \\
+  FELIX provides the following TTC information on an E-link: \\
+  \hspace*{5mm} Level-1 Accept, BCR, ECR, system[3..0], user[7] from the 8-bit TTC broadcast packet \\
+  The E-link provides the 40\,MHz BC clock which is used to
+  synchronize the output to the Sector Logic. This also includes the logic to synchronize a local bunch-crossing ID to the Sector Logic
+  by means of a configurable BC offset loaded on BCR into a local BCID register.
+  Note that the various input links will not have the same phase and may not even be matched to the same BC clock.
+  Input processors must ensure that all sources are aligned to the same BC clock.
+  Both technologies include a BCID or its low bits in the packet sent on every bunch-crossing.
+  Should the offset of this BCID from the local BCID differ from what is expected, an exception message (see below) must be sent.
+  The firmware to do this alignment is not shared.
+
+  \item[Level-1 output buffer] \hfill \\
+  For bunch-crossings in which at least one segment is found,
+  the input data and the output segment data that is sent to the Sector Logic is stored,
+  along with its BCID for later matching to the BCID of a Level-1 Accept.
+  Those bunch-crossings that have Level-1 Accepts (and possibly those preceding and following) are transferred to the Level-1 output buffer (aka derandomizer).
+  The data must be stored for the duration of the Level-1 latency.
+  The output bandwidth should be sufficient for the rather small fixed input and output data lengths at the full Level-1 rate of 400\,kHz.
+  If not, this logic could provide a BUSY output to the RODBUSY system when its output buffer becomes close to full.
+
+  \item[Monitored event buffer] \hfill \\
+  A random sample of complete events are collected for sending to a monitoring process.
+  Example criteria are: any event, event with at least one segment found, events with segments outside the $\Delta\theta$ cut, \ldots\.)
+  The data buffered as one event includes all the input data and the output segment data that is sent to the Sector Logic for a given BC.
+
+  \item[Statistics buffer] \hfill \\
+  Statistics are continuously collected and periodically transferred to the Statistics buffer.
+  Statistics includes the number of bunch-crossings that have candidates that are not accepted by Level-1, their distribution in $R\phi$,
+  the multiplicity of segments per bunch-crossing, etc.
+
+  \item[Exception buffer] \hfill \\
+  In the course of processing, exceptional conditions may be found, usually due to corrupted data.
+  A convenient way to handle these is to store an exception code and some context data into a buffer which will be passed to the monitoring PC via FELIX.
+
+  \item[Playback mode to fake input links] \hfill \\
+  For development and testing we require that simulated data can be injected in place of the data received by the links to the Front End.
+  One way to do this is via an E-link from FELIX that is available on the link that brings the TTC information.
+  Full-speed testing.
+
+  \item[Segment output to Sector Logic and to the ``other'' detector] \hfill \\
+  Segments are sent out either to the Sector Logic via the FPGA serializer or to the ``other'' detector via a parallel LVDS bus.
+  The candidate packet to be sent to the Sector Logic must be prepared from the segments found.
+  Clones must be made and the output links to the Sector logic must be driven.
+  If the segments found are to be sent to the ``other'' detector's Trigger Processor,
+  the segment data must be sequenced out onto the parallel LVDS bus.
+
+  \item[Merge buffers into the output GBT link to FELIX] \hfill \\
+  The Level-1, Monitoring, Statistics and Exception buffers are merged, using different FELIX ``stream-IDs'' onto a fiber link to FELIX.
+  FELIX then routes them to the ROD and Monitoring PCs.
+  % This may use the FELIX, so-called, ``flat'' mode (not one of the GBTx modes), where data is streamed in 8b/10b encoding on a single
+
+\end{description}
+
+Since the MM uses the GBTx to transmit the data from the Front End and the sTGC uses native FPGA serializers,
+the link interface firmware cannot be shared.
+Note that the monitoring of board temperatures and voltages is done by the ATCA Shelf Manager using IPMI.
+The fiber plant is described in Appendix~\ref{app:specs-fibers}.

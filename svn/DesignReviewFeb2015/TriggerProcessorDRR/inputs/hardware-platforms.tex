@@ -1,0 +1,148 @@
+There are two candidates for the NSW Trigger Processor hardware platform.
+One option is based on the boards for the \PhaseOne LAr Trigger system upgrade~\cite{hardware-LAr-Carrier,hardware-LAr-OTC} and the other is based on SRS boards designed within the RD51 collaboration~\cite{hardware-SRS-Carrier,hardware-SRS-Mezz}.
+The trigger signals will be processed in TP mezzanine cards~\cite{hardware-LAr-OTC,hardware-SRS-Mezz}
+mounted on ATCA carrier boards~\cite{hardware-LAr-Carrier,hardware-SRS-Carrier}. The LAr mezzanine card is a card with standard AMC interface, while the SRS mezzanine has a custom interface.
+There are four LAr mezzanine cards per ATCA board but only two SRS mezzanine cards.
+The custom interface allows the SRS mezzanine card to have a large number of faster interconnects between FPGAs.
+The four documents above describe the boards in detail while this
+section compares both options and provides a selection criteria.
+
+All boards are based on Xilinx Virtex FPGAs. The two mezzanine card options use FPGA
+Virtex 7 footprints compatible with XC7VX415T, XC7VX485T, XC7VX550T, XC7VX690T FPGAs~\footnote{The SRS option uses package FFG1158, while the LAr option uses package FFG1927. The difference being on the number of I/O pins but both are sufficient for our needs.}.
+At this point, we believe the TP will require the higher capacity XC7VX690T chip, which has GTH transceivers instead of GTX (as in XC7VX485T).
+
+
+\subsection{Specification Comparison}
+
+\subsubsection{ATCA Standard Interfaces}
+\label{atca-standard-interfaces}
+
+Both carrier boards adhere to current ATCA standards and provide all required
+interfaces.
+
+
+\subsubsection{Optical I/O for Detector Data and Sector Logic}
+\label{optical-io-for-detector-data-and-sector-logic}
+
+It is required that each Trigger Processor must be capable of operating
+independently of the other as well as in the normal operating mode of
+MM/sTGC pairs in tandem. Each TP must therefore be capable of driving
+sufficient number of fibers to the Trigger Logic. That requirement is
+two independent channels to carry up to four trigger candidates each, as
+well as a 7-fold fan-out to accommodate up to seven Sector Logic boards. Thus,
+each TP requires 14 fiber outputs running at \textgreater{}6.4\,Gbps
+each. Each TP also requires 32 fiber inputs to accommodate one sector
+for either the MM or sTGC. For the MM\_TP, input bandwidth of 6.4\,Gbps
+is required. A fiber link to FELIX for TTC, Level-1 data and
+monitoring/configuration data is also required.
+
+\begin{description}
+\item[SRS mezzanine card]
+The SRS mezzanine card provides three Avago $\mu$Pod optical transmitter modules and
+the same number of receiver modules. Each module has 12~channels which
+are specified to operate at up to 10\,Gbps, for a total of 36~channels
+each of transmitters and receivers.
+
+\item[LAr mezzanine card]
+The LAr mezzanine card has standard AMC interface.
+It provides 4x each Avago $\mu$Pod transmitter and receiver
+modules for a total of 48 i/o channels. For use in the NSW Trigger
+Processor, only three each of the transmitter and receiver modules would
+be populated, for a total of 36 i/o channels. Data rates of
+\textgreater{}10 Gbps have been demonstrated on the LAr card as this is
+a requirement for operation in the LAr detector.
+\end{description}
+
+
+\subsubsection{Mezzanine to mezzanine lateral communication}
+\label{amc-to-amc-lateral-communication}
+
+Each \MM TP must transfer its track-segment candidates to the neighboring \stgc TP
+within one bunch crossing. At least up to eight candidates must be transferred in that time.
+Each transfer requires 21 bits of data per candidate plus six for BCID and one overflow indicator
+for a total of $21\times8 + 6 +1 = 175$ bits/BC. Thus, aggregate bandwidth for lateral communication between AMC cards is 175/25ns = 7.0\,Gbps.
+
+\begin{description}
+\item[SRS mezzanine card]
+The SRS mezzanine card provides two independent Trigger Processors per card,
+with one dedicated to \MM and the other to \stgc. Each has its own
+FPGA and there are 64 LVDS pairs connecting the two. To transmit the
+required hit data from \MM to \stgc using all 64 lines, each would have to
+run at 100\,MHz. Since the two FPGAs are within \textasciitilde{}10\,cm of
+each other and on the same board, speeds beyond \textasciitilde{}1\,Gbps
+should be easily achievable. As the SRS mezzanine card is still in
+development, it is not available for testing at this moment.
+
+\item[LAr mezzanine card]
+Each mezzanine card will be configured as a \MM TP or as a \stgc TP. The FPGA on
+each card has, at the present time, eight LVDS lines which are transmitted
+to the ATCA carrier card through a connector. The LVDS output lines from
+one \MM mezzanine connect to an FPGA on the ATCA carrier, are transferred to
+corresponding LVDS outputs on that FPGA, and then to the \stgc mezzanine
+through its connector. Thus, the LVDS lines travel from \MM mezzanine to the
+\stgc mezzanine through two mezzanine connectors and an FPGA. Bandwidth for this
+arrangement has been tested to \textasciitilde{} 600\,Mbps, but without
+the intervening FPGA present. The designers plan to test to
+\textgreater{}1\,Gbps and are confident they can achieve higher bandwidth
+than has been demonstrated at present. For present purposes, a
+comfortable operating speed for these connections of 500\,Mbps is assumed
+until higher rates have been verified.
+
+The present iteration of the mezzanine (called OTC for Optical Test Card) has
+eight such LVDS pairs. At 500\,Mbps each, aggregate bandwidth is 4.0\,Gbps
+which is sufficient for transferring up to five trigger candidates per BC
+but not eight. The LAr AMC designers will attempt to expand the number of
+LVDS lines in subsequent iterations to accommodate the required
+bandwidth. At currently achieved bandwidth, a minimum number of LVDS
+lines in future board iterations would be 16, with slightly more being
+desirable.
+\end{description}
+
+
+\subsection{Selection Criteria}\label{selection-criteria}
+
+The main difference between the platforms appears to be one of topology.
+The LAr platform has four independent and identical AMC cards which can
+implement one trigger processor of each flavor. The two cards need to
+communicate laterally through the ATCA card and, at the moment, there
+are only 8 LVDS lines available for that purpose. These have been tested
+to 600\,MHz and perhaps can go higher. The designers may also be able to
+increase the number of lines to 16, thus enabling operation at a lower
+clock frequency. Assuming that the required lateral bandwidth can be
+achieved, it is unlikely that operation could be extended to higher
+rates of hit candidates.
+
+The SRS implements the system with ``double wide'' mezzanine cards with the
+two flavors of trigger processor on each and 64 LVDS pairs between them.
+Each can be expected to operate at \textasciitilde{}1\,GHz which is
+significantly higher than required for 8 hit candidates per BC and there
+would be no problem extending that to significantly higher throughput.
+The mezzanine board design and layout has been completed, however, it has not yet
+been produced, so there is no module in existence yet for testing.
+
+The ATCA-SRS board (Virtex 6) is already available and it was tested extensively within the RD51 collaboration. The next version of the board, which will likely use a Virtex 7 FPGA, is now being designed and is expected in mid 2015. This upgrade is not likely to be necessary for the TP project given the little functionality of the carrier card.
+The LAr ATCA carrier board has just finished the design stages. Since it is needed for the LAr trigger system, there should be little doubts that a card will eventually be available.
+
+The LAr platform will need additional design/fabrication
+cycles as will the SRS. Given that, the selection would require that development time be
+allowed before the decision is finalized. The decision should only be taken once we have tested the first prototype from both systems.
+
+A few selection criteria items are:
+\begin{itemize}
+\item The major selection criteria lays with the ability of either platform to
+deliver the required lateral bandwidth of 7.0\,Gbps or higher for upgrades.
+Having enough bandwidth to transmit more information within one BC for a possible more complex trigger algorithm in \PhaseTwo is desirable.
+
+\item Support that can be expected for additions or correction of design errors that may be required. The LAr system will be supported by Stonybrook and assurances from US ATLAS are required to ensure that they will get any needed budget support. The SRS system will be supported by a combination of Bucharest and the commercial company that is selling the system. The details must be clarified.
+
+\item Although detailed costing has not yet been done, the costs of the two solutions should be comparable, since it is dominated by the cost of the FPGA and electro-optics. However the effect on cost due to the commercialization needs to be clarified.
+\end{itemize}
+
+
+It should be stated that the selection of the hardware platform is not yet on the critical path.
+Algorithms and the ancillary functions are being developed using evaluation boards from Xilinx and Hitech Global.
+The Xilinx boards have four bidirectional links, the Hitech Global has 24.
+
+
+
+

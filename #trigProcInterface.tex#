@@ -1,0 +1,125 @@
+%% LyX 2.0.6 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{graphicx}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+%% Because html converters don't know tabularnewline
+\providecommand{\tabularnewline}{\\}
+%% A simple dot to overcome graphicx limitations
+\newcommand{\lyxdot}{.}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{babel}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+
+\section{Trigger processor ADDC Interface}
+
+The ART data from an entire wedge will be transmitted to a single
+trigger processor. 32 ADDCs are required to cover one wedge resulting
+in 32 total fibers per Trigger Processor. Since the MM and sTGC trigger
+processors will share the same ATCA carrier card, each carrier will
+support 2 wedges. 
+
+The ART Data from the ADDC will be transmitted using the GigaBit Transceiver
+(GBT) architecture and transmission protocol in a low-latency widebus
+mode. The Trigger Processor will take advantage of the GBT firmware
+developed by GBT Project to implement the receivers.
+
+
+\subsection{ART Data Protocol}
+
+The GBT packet in widebus mode will provide 112 data bits and arrives
+once every bunch crossing. One ADDC will service 32 VMMs and each
+packet can contain ART data from a maximum of 8 triggered VMMs. Each
+VMM will be uniquely identifed to determine which micromegas strip
+on the wedge was hit.
+
+There are two options for how data packet bits will be defined. The
+difference between the two is how the VMM ID information is encoded.
+The first data protocol option will provide the VMM IDs of every VMM
+that was triggered by asserting a bit in a 32-bit hit list. The second
+option will encode each VMM ID in a list. For both options the triggered
+strip number within each VMM will be provided in a list. The first
+option would move the VMM ID encoding task from the ADDC ASIC to the
+Trigger Processor FPGA.
+
+\begin{tabular}{|c|c|c|c||c|c|}
+\hline 
+\multicolumn{6}{|c|}{Option 1 GBT DATA{[}111:56{]}}\tabularnewline
+\hline 
+\hline 
+``1010''  & BCID{[}11:0{]}  & ERR\_FLAGS{[}7:0{]}  & HIT\_LIST{[}31:0{]}  & ARTDATA\_PARITY{[}7:0{]}  & 8 x ARTDATAx{[}5:0{]}\tabularnewline
+\hline 
+\end{tabular}
+
+\begin{tabular}{|c|c|c||c|c||c|}
+\hline 
+\multicolumn{6}{|c|}{Option 2 GBT DATA{[}111:56{]}}\tabularnewline
+\hline 
+\hline 
+HIT\_CNT{[}3:0{]}  & BCID{[}11:0{]}  & \multicolumn{2}{c|}{8 x VMMIDx{[}4:0{]}} & ARTDATA\_PARITY{[}7:0{]}  & 8 x ARTDATAx{[}5:0{]}\tabularnewline
+\hline 
+\end{tabular}
+\begin{itemize}
+\item HIT\_LIST{[}31:0{]} = 32-bit list of flags corresponding to each of
+the 32 VMMs. 0 - no hit, 1 - hit. A register controls if this is a
+filtered (i.e. 8 hits max) or an un- filtered copy of the VMM flags
+registered in a particular BC. 
+\item HIT\_CNT{[}3:0{]} = number of hits (range 0 - 8; 9 - 15 invalid) 
+\item ARTDATA\_PARITY{[}7:0{]} = parity bit of the ART data computed by
+each of the 32 ART de-serializer units. Each bit corresponds to one
+of the ART data field selected by the priority unit. 
+\end{itemize}
+\includegraphics[bb=0 0 200 100,draft,type=eps,bb = 0 0 200 100, draft, type=eps]{/home/nate/Desktop/Screenshot-Format of ADDC output - caproniarts@gmail.com - Gmail - Google Chrome.png}
+
+
+\section{Trigger Processor Implementation and testing}
+
+A 1/16\textsuperscript{th} slice of the complete Trigger Processor
+design has been implemented and is being tested using a Xilinx VC707
+Development board. This board includes a Virtex XC7VX485T-2FFG1761C
+FPGA. The implementation includes 2 ADDC GBT interfaces and assoiated
+trigger processor algorithim. Extrapolating from this implementation,
+the resources are estimated to be \textasciitilde{}70\% of the Xilinx
+485 chip. There are pin compatible upgrades to the target chip if
+more resources are needed.
+
+
+\subsection{Trigger Processor Initial Testing}
+
+A 1/16\textsuperscript{th} slice of the complete Trigger Processor
+design has been implemented and is being tested using a Xilinx VC707
+Development board. This board includes a Virtex XC7VX485T-2FFG1761C
+FPGA. The implementation includes 2 ADDC GBT interfaces and associated
+trigger processor algorithm. 
+
+To exercise the trigger processor design we have developed an ADDC
+emulator. This design can be used to supply properly formatted ADDC
+GBT packets through an optical transmitter as sent from an actual
+ADDC. The same ART data used for simulations is being used for hardware
+testing. We are also generating pseudo random ART data to test the
+GBT communication and timing of packet decoder.
+
+To evaluate the hardware implementation, we compare the hardware results
+with results generated using a computer simulation. All of the differences
+at this point are due to the number of significant bits being used
+in the hardware implementation. We are currently working on optimizing
+this. Figure show an example of such comparisons by looking at the
+differences between hardware implementation and software simulation
+ROI result. in this example, the x and y axis represent the percent
+error of the ROI Cartesian coordinates.
+
+We have begun integration testing with the BNL ADDC and have successfully
+transmitted data to the trigger processor using the ADDC's VTRx ASIC.
+\end{document}
+initial comparisons 

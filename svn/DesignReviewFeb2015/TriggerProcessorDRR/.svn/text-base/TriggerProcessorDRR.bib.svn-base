@@ -1,0 +1,85 @@
+@Article{NSWTDR,
+      author         = "{ATLAS New Small Wheel collaboration}",
+      title          = "{New Small Wheel Technical Design Report}",
+      number         = "CERN-LHCC-2013-006; ATLAS-TDR-020",
+      year           = "2013",
+      url 			 = {https://cds.cern.ch/record/1552862},
+}
+
+@Article{hardware-LAr-Carrier,
+      author    = "{Stony Brook University and Arizona University}",
+      title          = "{The ATLAS Phase-I Upgrade LAr System ATCA Carrier Board}",
+      year           = "2015",
+      url                = {https://edms.cern.ch/file/1476255/1/NSW_TriggerProcessor_LAr_ATCA_PDR_20150209.pdf},
+}
+@Article{hardware-LAr-OTC,
+      author    = "{BNL, Stony Brook University and Arizona University}",
+      title          = "{LAr Optical Test Card Description}",
+      year           = "2015",
+      url 			 = {https://edms.cern.ch/file/1476255/1/NSW_TriggerProcessor_LAr_Mezzanine_PDR_20150209.pdf},
+}
+@Article{hardware-SRS-Carrier,
+      author         = "{eicSys GmbH}",
+      title          = "{EATCA-100, FPGA based ATCA blade for RD51 SRS system, User Manual}",
+      year           = "2014",
+      url                = {https://edms.cern.ch/file/1476256/1/NSW_TriggerProcessor_SRS_ATCA_PDR_20150209.pdf},
+}
+@Article{hardware-SRS-Mezz,
+      author         = "{Sorin Martoiu}",
+      title          = "{High-Density Optical Receiver Mezzanine board for ATCA-SRS}",
+      year           = "2015",
+      url 			 = {https://edms.cern.ch/file/1476256/1/NSW_TriggerProcessor_SRS_Mezzanine_PDR_20150209.pdf},
+}
+@Article{harvard-alg-misal,
+      author         = "Stephen Chan et al.",
+      title          = "{Micromegas Trigger Misalignment}",
+      year           = "2014",
+      url 			 = {https://indico.cern.ch/event/357663/contribution/3/material/slides/0.pdf},
+}
+@Article{harvard-alg-xxuvuvxx,
+      author         = "Brian Clark et al.",
+      title          = "{NSW MicroMegas trigger simulations comparing stereo strip configurations}",
+      year           = "2014",
+      url 			 = {https://indico.cern.ch/event/356850/contribution/2/material/slides/0.pdf},
+}
+
+@Article{CERN-LHCC-2011-012,
+      title         = "{Letter of Intent for the Phase-I Upgrade of the ATLAS
+                       Experiment}",
+      institution   = "CERN",
+      address       = "Geneva",
+      number        = "CERN-LHCC-2011-012. LHCC-I-020",
+      year          = "2011",
+}
+
+@Article{harvardAlg,
+author        = "Clark, B and Lopez Mateos, D and Felt, N and Huth, J and
+                       Oliver, J",
+      title         = "{An Algorithm for Micromegas Segment Reconstruction in the
+                       Level-1 Trigger of the New Small Wheel}",
+      institution   = "CERN",
+      address       = "Geneva",
+      number        = "ATL-UPGRADE-INT-2014-001",
+      year          = "2014",
+      url = {https://cds.cern.ch/record/1753329}
+}
+
+@Article{LellouchRates,
+author        = "Daniel Lellouch",
+      title         = "{NSW Estimates of Data Rates}",
+      institution   = "Weizmann Institute",
+      address       = "Rehovot, Israel",
+      number        = "ATL-M-EN-0023",
+      year          = "2015",
+      url = {https://edms.cern.ch/document/1474219/1}
+      }
+      
+@Article{padTower,
+author        = "V.Izzo, S.Perrella, R.Vari",
+      title         = "{The NSW sTGC Pad Trigger Logic board}",
+      institution   = "INFN, Roma & Napoli",
+      address       = "Rome, Italy",
+      number        = "ATL-M-EN-0016",
+      year          = "2015",
+      url = {https://edms.cern.ch/document/1470537/1}
+      }      

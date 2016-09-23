@@ -1,0 +1,34 @@
+% Combination of sTGC and MM trigger data
+%
+
+The \MM and \stgc trigger processors compute track vectors independently. The \stgc trigger produces a maximum of four candidates per sector, driven by its hardware design.
+The \MM trigger has no such limitation and can theoretically find more candidates if they are present. 
+
+%Both \stgc and \MM trigger processors belonging to a NSW \sector will be in the same ATCA board~\cite{hardware-LAr-Carrier,hardware-SRS-Carrier}, although their information is processed by separate algorithms (see Section~\ref{sec:algorithms}) in separate FPGAs. 
+
+The \stgc and \MM trigger information from one NSW \sector will be processed in the same Trigger Processor ATCA board~\cite{hardware-SRS-Carrier,hardware-LAr-Carrier}. The two algorithms (see Section~\ref{sec:algorithms}) will run in separate FPGAs, connected by several high-speed, low latency differential LVDS pairs.
+Depending on the hardware platform chosen the two FPGAs will be located in one (SRS option~\cite{hardware-SRS-Mezz}) or two  (LAr option~\cite{hardware-LAr-OTC}) mezzanine cards. 
+A NSW trigger processor ATCA board serves one NSW octant, i.e. two NSW sectors, and therefore
+contains two or four mezzanine cards (depending on the hardware platform).
+A comparison of the two platforms is provided in Section~\ref{sec:hardware-platforms}.
+
+%A NSW trigger processor ATCA board (corresponding to two NSW sectors) contains two or four mezzanine cards (depending on the hardware platform ultimately chosen) and therefore serves a NSW octant
+
+Given that the \MM trigger system is expected to be faster than the \stgc one, the \MM trigger results will be sent 
+to the \stgc FPGA for the stream merging stage. This procedure eliminates the impact on the latency due to the data transfer. The merging algorithm, which includes duplicate removal, is expected to take up to 50 ns, 
+increasing the overall NSW latency budget to 43 BCs. The actual algorithm implementation is however needed for a full evaluation of its impact on the latency.
+
+In order to implement the merging algorithm, the fast connectivity between the \MM and \stgc FPGAs is imperative.
+In the current design, the SRS option offers 64 LVDS high-speed connections between the FPGAs, which would fully satisfy the bandwidth requirements, while the LAr option only offers eight.
+Studies are on-going to determine by how much this number could be increased.
+
+The trigger stream merging will limit the number of NSW track vector candidates to eight (subject to simulation results, see Section~\ref{ssec:specs-TriggerFormat}). Possible selection criteria of track vectors are:
+\begin{itemize}
+	\item Remove duplicates, where a duplicate is a candidate with the same $R$ and $\phi$, and similar $\Delta\theta$. The conditions for a $\Delta\theta$ match still need to be evaluated taking into account the intrinsic resolutions and the relative alignment of the two detectors.
+	\item Select according to a `quality' flag defined by the trigger algorithm. For example, if the vector was produced from only one of the two four-layer modules of the \stgc because the track passed through a support in the second module, its resolution is degraded and the vector would have a lower quality.
+\end{itemize}
+
+Although both \stgc and \MM trigger modules are in the same ATCA board with high bandwidth connectivity, an algorithm that would merge hits and then find vectors has been disfavored at this time due to the additional latency requirements and increased complexity.
+
+%Handling the details of the detector differences at the hit level would require more processing time than is available in the \PhaseOne latency budget.
+%Any improvement of the vectors' accuracy from such an algorithm may not be needed, at least for \PhaseOne, and the added complexity may not be justified.

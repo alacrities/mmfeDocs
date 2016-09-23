@@ -1,0 +1,35 @@
+\subsubsection{Trigger Processor Initial Testing}
+
+A 1/16\textsuperscript{th} slice of the complete Trigger Processor
+design has been implemented and is being tested using a Xilinx VC707
+Development board. This board includes a Virtex XC7VX485T-2FFG1761C
+FPGA. The implementation includes 2 ADDC GBT interfaces and associated
+trigger processor algorithm. 
+
+To exercise the trigger processor design we have developed an ADDC
+emulator. This design can be used to supply properly formatted ADDC
+GBT packets through an optical transmitter as sent from an actual
+ADDC. The same ART data used for simulations is being used for hardware
+testing. We are also generating pseudo random ART data to test the
+GBT communication and timing of packet decoder.
+
+To evaluate the hardware implementation, we compare the hardware results
+with results generated using a computer simulation. All of the differences
+at this point are due to the number of significant bits being used
+in the hardware implementation. We are currently working on optimizing
+this. Figure~\ref{fig:hardwareTestingInitial} show an example of such comparisons by looking at the
+differences between hardware implementation and software simulation
+ROI result. in this example, the x and y axis represent the percent
+error of the ROI Cartesian coordinates.
+
+\begin{figure}[h]
+ \begin{center}
+ \includegraphics[width=0.8\textwidth]{figures/hardwareTestingInitial}
+ \caption{Block diagram representing the flow of the APG}
+ \label{fig:APGBlockDiag}
+ \end{center}
+ \end{figure}
+
+We have begun integration testing with the BNL ADDC and have successfully
+transmitted data to the trigger processor using the ADDC's VTRx ASIC.
+
